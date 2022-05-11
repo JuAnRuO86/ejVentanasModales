@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventanas Modales</title>
+</head>
+<style>
+    body {
+        background-color: white;
+    }
+
+    div::first-letter {
+        font-weight: bold;
+        font-style: italic;
+        font-size: xx-large; 
+    }
+
+    div:nth-child(odd) {
+        background-color: lightblue;
+    }
+
+    div:nth-child(even) {
+        background-color: lightpink;
+    }
+
+    p:last-of-type::after {
+        content: "...";
+    }
+
+    p:only-child::after { 
+        content:none;
+    }
+
+    p {
+        line-height: 12px;
+        padding-top: 10px;
+    }
+
+    div {
+        line-height: 36px;
+    }
+
+    .pestañaPrin[class] {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+    }
+
+
+    .pestañaDos {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    }
+
+
+    .cerrar {
+    color: #aaaaaa;
+    float:right;
+    font-size: 28px;
+    font-weight: bold;
+    }
+
+    .cerrar:hover,
+    .cerrar:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    }
+
+</style>
+<body>
+    <p>Soldadito marinero</p>
+    <div>
+        <p>Él camina despacito que las prisas no son buenas</p>
+        <p>En su brazo dobladita, con cuidado la chaqueta</p>
+        <p>Luego pasa por la calle dónde los chavales juegan</p>
+        <p>Él también quiso ser niño pero le pilló la guerra</p>
+    </div>
+    <div>
+        <p>Soldadito marinero conociste a una sirena</p>
+        <p>De esas que dicen te quiero si ven la cartera llena</p>
+        <p>Escogiste a la más guapa y a la menos buena</p>
+        <p>Sin saber como ha venido te ha cogido la tormenta</p>
+    </div>
+    <div>
+        <p>Él quería cruzar los mares y olvidar a su sirena</p>
+        <p>La verdad, no fue difícil cuando conoció a Mariela</p>
+        <p>Que tenía los ojos verdes y un negocio entre las piernas</p>
+        <p>Hay que ver que puntería, no te arrimas a una buena</p>
+    </div>
+    <div>
+        <p>Soldadito marinero conociste a una sirena</p>
+        <p>De esas que dicen te quiero si ven la cartera llena</p>
+        <p>Escogiste la más guapa y a la menos buena</p>
+        <p>Sin saber como ha venido te ha cogido la tormenta</p>
+    </div>
+    <div>
+        <p>Después de un invierno malo, una mala primavera
+        </p><p>Dime por que estas buscando una lágrima en la arena
+        </p><p>Después de un invierno malo</p>
+
+    </div>
+
+
+    <button id="miBoton">Ver ventana</button>
+
+    <div id="pestañaPrincipal" class="pestañaPrin">
+
+    <div class="pestañaDos">
+      <span class="cerrar">&times;</span>
+      <p>Fuente: letras.com<br><br><br>
+        Autor: Fito y fitipaldis
+    </p>
+    </div>
+
+    <script>
+
+    var pestañaPrin = document.getElementById("pestañaPrincipal");
+    var btn = document.getElementById("miBoton");
+    var span = document.getElementsByClassName("cerrar")[0];
+
+    btn.onclick = function() {
+    pestañaPrin.style.display = "block";
+    }
+
+    span.onclick = function() {
+    pestañaPrin.style.display = "none";
+    }
+
+
+    </script>
+</body>
+</html>
